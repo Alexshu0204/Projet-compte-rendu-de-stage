@@ -15,13 +15,13 @@ $cr = $pdoStat->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste compte rendu</title>
-
+    <title>Liste des comptes rendus</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
         }
 
         h1 {
@@ -30,43 +30,49 @@ $cr = $pdoStat->fetchAll();
         }
 
         table {
-            width: 100%;
+            width: 90%;
+            margin: 20px auto;
             border-collapse: collapse;
-            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
-            padding: 10px;
-            border: 1px solid #ccc;
-            text-align: left;
+        table th, table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
         }
 
-        th {
+        table th {
             background-color: #007BFF;
-            color: white;
+            color: #fff;
+            font-weight: bold;
         }
 
-        tr:nth-child(even) {
+        table tr:nth-child(even) {
             background-color: #f2f2f2;
         }
 
-        .action-btn {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .action-btn:hover {
-            background-color: #0056b3;
+        table tr:hover {
+            background-color: #e9ecef;
         }
 
         .action-form {
-            display: inline;
+            display: inline-block;
+        }
+
+        .action-btn {
+            padding: 8px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .action-btn:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -77,6 +83,7 @@ $cr = $pdoStat->fetchAll();
     <table>
         <thead>
             <tr>
+                <th>Utilisateur</th>
                 <th>Date de création</th>
                 <th>Description</th>
                 <th>Date de modification</th>
@@ -86,13 +93,14 @@ $cr = $pdoStat->fetchAll();
         <tbody>
             <?php foreach ($cr as $Cr): ?>
                 <tr>
+                    <td><?= htmlspecialchars($Cr['numEleve']) ?></td>
                     <td><?= htmlspecialchars($Cr['datecreation']) ?></td>
                     <td><?= htmlspecialchars($Cr['description']) ?></td>
                     <td><?= htmlspecialchars($Cr['datemodification']) ?></td>
                     <td>
-                        <form action="creer_cr.php" method="POST" class="action-form">
+                        <form action="commenter.php" method="POST" class="action-form">
                             <input type="hidden" name="id_cr" value="<?= $Cr['id'] ?>">
-                            <button type="submit" class="action-btn">Modifier</button>
+                            <button type="submit" class="action-btn">Commenter</button>
                         </form>
                     </td>
                 </tr>

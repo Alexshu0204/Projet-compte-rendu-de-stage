@@ -139,9 +139,6 @@ session_start();
             <textarea id="description" name="description" rows="4" cols="50" placeholder="Entrez une description ici..."></textarea>
             <button type="submit" name="send_creerCR">Envoyer</button>
 
-            <br/>
-            <!--<input type="submit" value="Voir commentaire" name="send_con">-->
-            <input type="submit" value="Modifier" name="send_con">
 
         </form>
 

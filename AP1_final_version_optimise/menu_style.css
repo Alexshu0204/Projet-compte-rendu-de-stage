@@ -1,3 +1,11 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* pour qu'il soit bien au-dessus du reste */
+}
+
 .container-fluid{
     background-color:rgb(238, 242, 249) !important;
     color:rgb(125, 27, 27);

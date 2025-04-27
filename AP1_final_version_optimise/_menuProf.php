@@ -17,6 +17,10 @@
                 <a class="nav-link" href="cr.php"><span class="results">Comptes rendus</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="liste_eleves.php"><span class="studentsLi">Liste des élèves</span></a>
+            </li>
+
         </ul>
 
         <!-- Onglet "Compte" aligné à droite -->

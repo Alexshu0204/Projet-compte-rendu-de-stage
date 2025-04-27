@@ -2,7 +2,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f7f9fc;
     margin: 0;
-    padding: 0;
+    padding: 50px 0 0 0; /* <-- on ajoute du padding en haut au cause du navbar fixe (70px par exemple) */
 }
 
 /* Conteneur principal du formulaire */

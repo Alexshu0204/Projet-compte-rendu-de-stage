@@ -26,10 +26,10 @@ include '_conf.php';
     <body>
         <?php
 
-        if (isset($_POST['insertion'])) //Récupère les donnés de ccr.php (Création des CR)
+        if (isset($_POST['insertion'])) //Récupère les donnés de ccr.php (les CR qu'a créé l'élève sont affichés sur cette page)
         {
             $date=$_POST['date'];
-            $contenu= addslashes($_POST['contenu']); // Utilisé pour échapper les caractères spéciaux (genre les ' ou ") dans le texte, pour éviter des erreurs SQL.
+            $contenu= addslashes($_POST['contenu']); // "addslashes" est utilisé pour échapper les caractères spéciaux (genre les ' ou ") dans le texte, pour éviter des erreurs SQL.
             $id=$_SESSION["id"];
             $connexion = mysqli_connect($serveurBDD,$userBDD,$mdpBDD,$nomBDD);
             $requete="INSERT INTO cr (date,datetime,description,num_utilisateur) VALUES ('$date',NOW(),'$contenu','$id');"; //crée nouveau compte rendu avec infos recuperees
@@ -75,11 +75,18 @@ include '_conf.php';
         if ($_SESSION["type"] ==1) //si connexion en prof
         {
             include '_menuProf.php';
+
+            //Les CR des élèves sont affichés dans l'ordre décroissant
             $requete="SELECT *,DATE_FORMAT(date, '%d/%m/%Y') AS date_fr FROM cr,utilisateur WHERE utilisateur.num = cr.num_utilisateur  ORDER BY date DESC";
                 if($connexion = mysqli_connect($serveurBDD,$userBDD,$mdpBDD,$nomBDD))
                 {
             
+                    /********************
+                    ***********Pour récuperer les données des CR on doit se connecter et on va créer la variable $resultat
+                    ********************/
                     $resultat = mysqli_query($connexion, $requete);
+
+                    // Exécution de la requête + affichage des résultats
                     while($donnees = mysqli_fetch_assoc($resultat))
                     {
                         $num=$donnees['num'];

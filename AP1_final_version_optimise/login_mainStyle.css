@@ -1,0 +1,247 @@
+
+/***************Création d'une animation fondue au chargement de la page****************/
+.container {
+    animation: fadeIn 0.65s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/*paramétrage de l'ensemble du body*/
+body{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(37, 17, 75, 0.812);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.loginTitle{
+    position: absolute;
+    color: #f8f8f8;
+    text-shadow: 0.5px 0.5px 1px rgb(64, 12, 12);
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    text-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+/*paramétrage du conteneur*/
+.auth_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+
+.adminIcone{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.adminIcone img{
+    width: 35px;
+    height: 35px;
+    color: white;
+    text-shadow: 0.5px 0.5px 1px rgb(64, 12, 12);
+}
+
+.adminTitle {
+    font-family: 'Nunito Sans';
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0.5px 0.5px 1px rgb(64, 12, 12);
+}
+
+
+/***********************************************************************
+---------------------Tout le contenu du formulaire----------------------
+***********************************************************************/
+
+
+.container {
+    background: rgba(3, 14, 54, 0.773);
+    margin-top: 20px;
+    width: 400px;
+    height: 380px;
+    padding: 48px;
+    border-radius: 8px;
+    backdrop-filter: blur(1px);
+    border: none;
+    box-shadow: rgba(75, 48, 128, 0.96) 0px 20px 30px -10px;
+    
+}
+
+
+/* Désactiver le changement de style par l'autocomplétion */
+.input-container input:-webkit-autofill,
+.input-container input:-webkit-autofill:hover, 
+.input-container input:-webkit-autofill:focus, 
+.input-container input:-webkit-autofill:active {
+    -webkit-text-fill-color: white !important; /* Garde le texte en blanc */
+    font-size: 16px !important; /* Garde la taille du texte du placeholder */
+    background-color: rgba(255, 255, 255, 0.073) !important; /* Garde le fond transparent */
+    box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.3) inset !important; /* Empêche le changement de couleur */
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    transition: background-color 5000s ease-in-out 0s; /* Empêche le changement progressif */
+}
+
+
+.input-container {/*englobe l'input et l'icône*/
+    position: relative;
+    width: 84%;
+}
+
+.input-container i {/*positionne l’icône à l’intérieur du champ*/
+    position: absolute;
+    left: 15px; /* Distance entre l’icône et le bord gauche */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: white;
+}
+
+.input-container input {/*ajuste l’espacement du texte pour qu’il ne chevauche pas*/
+    font-size: 16px;
+    width: 100%;
+    background-color:rgba(183, 164, 189, 0.2);
+    border: 1.6px solid rgba(250, 236, 236, 0.625);
+    color: #fff;
+    padding: 15px 15px 15px 45px; /* Ajout d'un padding à gauche pour ne pas chevaucher l’icône */
+    border-radius: 10px;
+    margin: 10px 0;
+    transition: 0.165s;
+}
+
+.input-container input::placeholder {/*configuration du placeholder*/
+    color: rgba(255, 255, 255, 0.82);
+    text-shadow: 0.5px 0.5px 1px rgba(64, 12, 12, 0.58);
+}
+
+.input-container input:focus{/* Personnalisation de l'apparence de l'input lorsqu'il est focus */
+    outline: none;/*enlève le contour par défaut*/
+    border-color: #55fdfa8f;
+    box-shadow: 0 0 8px rgba(52, 188, 219, 0.49);
+}
+
+.input-container input:hover{
+    background-color:rgba(222, 205, 230, 0.28);
+}
+
+
+.RemFog{
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    text-shadow: 0.5px 0.5px 1px rgb(64, 12, 12);
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+  }
+
+a:hover{
+    text-decoration: underline;
+    text-underline-position: under; /*abaisser le soulignage*/
+    color:rgba(255, 255, 255, 0.793);
+}
+
+#loginButton{/*Ajustement du bouton se connecter*/
+    font-size: 18px;
+    background-color: white;
+    color: rgb(71, 5, 88);
+    width: 100%;
+    min-height: 50px; 
+    position: relative; /* Permet de positionner l'animation sans affecter le texte */
+    border: none;
+    padding: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.5s;
+}
+
+#loginButton {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#loginButton:after {
+    content: '»';
+    font-size: 22px;
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.8s;
+}
+
+#loginButton:hover {
+    background-color: rgb(238, 243, 247);
+    color: rgb(23, 116, 52);
+    box-shadow: 0 0 8px rgba(52, 188, 219, 0.781);
+    border: none;
+    padding-right: 24px;
+    padding-left:8px;
+}
+
+#loginButton:hover:after{
+    opacity: 1;
+    right: 110px;
+    color: rgb(23, 116, 52);
+} 
+
+
+/*Animation du bouton de connexion*/
+#loginButton .loader {
+    position: absolute;
+    right: 15px; /* Garde l'animation à droite sans bouger le texte */
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}

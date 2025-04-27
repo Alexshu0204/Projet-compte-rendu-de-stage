@@ -1,0 +1,85 @@
+/* Police principale */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur des tableaux */
+.table-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border: 2px solid #214a9c;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.table-container:hover {
+    transform: scale(1.01);
+}
+
+/* Tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* En-tête du tableau */
+thead th {
+    background-color: #4e73df;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 18px;
+}
+
+/* Corps du tableau */
+tbody td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #333333;
+    border-top: 1px solid #dddddd;
+}
+
+/* Lien de modification */
+.btn-modification {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1cc88a;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-modification:hover {
+    background-color: #17a673;
+}
+
+/* Soulignement pour les titres */
+u {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .table-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    thead th, tbody td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

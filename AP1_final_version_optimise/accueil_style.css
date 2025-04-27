@@ -1,0 +1,13 @@
+.welcome-section {
+    margin: 280px;
+}
+
+.welcome-section h2 {
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.welcome-section h4 {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #555;
+}
